@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works · Superior 100 Spectator Guide</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="back-link">← Home</a>
+      <div class="header-eyebrow">Superior Hiking Trail</div>
+      <h1>How It <span class="header-accent">Works</span></h1>
+    </div>
+  </header>
+
+  <main class="about-main">
+
+    <div class="about-section card">
+      <h2 class="about-heading">The data</h2>
+      <p>This app is built on split times from <strong>2,500+ runners</strong> who raced the Superior 100 between 2014 and 2025 (every year except 2020). For each runner, we have the exact time they passed through all 14 aid stations — from Split Rock at mile 8.4 all the way to the finish at mile 102.</p>
+    </div>
+
+    <div class="about-section card">
+      <h2 class="about-heading">Finding your runner's peers</h2>
+      <p>When you tell us where and when you last saw your runner, the app searches through all 2,500+ historical runners to find those who were at that same checkpoint at a similar time. Think of these as your runner's <strong>statistical peers</strong> — people who were running at the same pace, on the same part of the course, at the same point in their race.</p>
+      <p>The app uses a technique called <strong>kernel regression</strong> to weight each historical runner by how closely they match your observation. A runner who was at Finland at exactly 10 PM gets full weight; one who was there at 9 PM or 11 PM gets less weight.</p>
+    </div>
+
+    <div class="about-section card">
+      <h2 class="about-heading">The prediction</h2>
+      <p>Once the app has assembled your runner's peer group, it simply looks at when those same runners reached each upcoming checkpoint. If 100 peers arrived at Finland around 10 PM, and most of them reached Sonju between midnight and 2 AM, that window becomes your prediction.</p>
+      <p>The <strong>median</strong> is the middle value — half of the peer group arrived before this time, half after. It's the most likely arrival time.</p>
+    </div>
+
+    <div class="about-section card">
+      <h2 class="about-heading">What the confidence bands mean</h2>
+      <p>The chart shows two shaded regions:</p>
+      <ul class="about-list">
+        <li><strong>80% band</strong> — 80% of runners in the peer group arrived within this window. There's a 10% chance your runner arrives earlier and a 10% chance they arrive later.</li>
+        <li><strong>50% band</strong> — The tighter central range where half of peer runners arrived. This is a reasonable "plan your drive" window.</li>
+      </ul>
+      <p>These bands represent the natural variation between runners — some people stop longer at aid stations, some hit a rough patch, some have a great day. The wider the band, the more spread out the historical peer group was at that checkpoint.</p>
+    </div>
+
+    <div class="about-section card">
+      <h2 class="about-heading">Multiple sightings</h2>
+      <p>Each time you add a sighting, the peer group gets more specific. A runner seen at Silver Bay at noon <em>and</em> Finland at 10 PM is a much more specific runner type than one observation alone — and the app will find the exact historical runners who match <em>both</em> conditions simultaneously.</p>
+      <p>In practice, two sightings can cut the confidence interval nearly in half, because you're ruling out runners who happened to be at one checkpoint at the right time but had a very different overall pace.</p>
+    </div>
+
+    <div class="about-section card">
+      <h2 class="about-heading">Important caveats</h2>
+      <ul class="about-list">
+        <li>This is based on historical patterns, not your specific runner. Injuries, weather, and race-day decisions aren't modeled.</li>
+        <li>The confidence bands represent variation <em>within</em> the peer group — they are not a guarantee your runner falls in that range.</li>
+        <li>Very slow or very fast paces may have small peer groups, which means less reliable predictions. The app always shows how many runners it's drawing from.</li>
+        <li>Aid station names and course distances have changed slightly over the years. Predictions are based on time patterns, not distances.</li>
+      </ul>
+    </div>
+
+    <div class="about-section card">
+      <h2 class="about-heading">Tips for spectators</h2>
+      <ul class="about-list">
+        <li>Use the <strong>50% band</strong> to plan when to arrive at an aid station — it covers the most likely arrival window.</li>
+        <li>Add your most recent sighting as the primary observation — it's the most predictive data point.</li>
+        <li>If you saw your runner at two different checkpoints, add both — it significantly improves accuracy.</li>
+        <li>For checkpoints that are a drive apart, use the Early (10%) time to decide when to leave — you probably don't want to miss them.</li>
+      </ul>
+    </div>
+
+    <div class="about-cta">
+      <a href="predict.html" class="btn btn-primary">Start Predicting →</a>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Using data from 2014–2025 Superior 100 races (no 2020)</p>
+  </footer>
+
+</body>
+</html>

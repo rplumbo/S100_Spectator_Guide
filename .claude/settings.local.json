@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ':*)",
+      "Bash(python3 -m http.server 8742)",
+      "Bash(curl -s http://localhost:8742/)",
+      "Read(//dev/**)",
+      "Bash(python3 build_model.py)"
+    ]
+  }
+}
